@@ -3,40 +3,219 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoElite</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>AutoElite - Carros Premium</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-[Montserrat]">
-  <!-- Navbar -->
-  <nav class="fixed w-full bg-white shadow z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold text-red-600">AutoElite</div>
-      <ul class="flex space-x-6 text-gray-700 font-semibold">
-        <li><a href="#inicio" class="hover:text-red-600">Início</a></li>
-        <li><a href="#modelos" class="hover:text-red-600">Modelos</a></li>
-        <li><a href="#novidades" class="hover:text-red-600">Novidades</a></li>
-        <li><a href="#reviews" class="hover:text-red-600">Reviews</a></li>
-        <li><a href="#contato" class="hover:text-red-600">Contato</a></li>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">AutoElite</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#modelos">Modelos</a></li>
+        <li><a href="#visualizador">Visualizador 3D</a></li>
+        <li><a href="#destaques">Destaques</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
+      <div class="nav-icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
   </nav>
 
-  <!-- Conteúdo -->
-  <main class="mt-24 px-4">
-    <section id="inicio" class="text-center py-24 bg-gray-100">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Descubra o Poder da Engenharia</h1>
-      <p class="text-lg text-gray-700 mb-6">Explore os carros mais modernos e potentes do mercado</p>
-      <div class="flex justify-center gap-4">
-        <button class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition">Ver Modelos</button>
-        <button class="bg-gray-200 text-gray-800 px-6 py-2 rounded hover:bg-gray-300 transition">Saiba Mais</button>
+  <section id="inicio" class="hero">
+    <div class="particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Descubra o <span>Poder</span> da Engenharia Automotiva</h1>
+        <p>Explore os carros mais modernos, potentes e tecnológicos do mercado. Performance e luxo em um só lugar.</p>
+        <div class="hero-btns">
+          <a href="#modelos" class="btn btn-primary">Ver Modelos</a>
+          <a href="#visualizador" class="btn btn-secondary">Visualizador 3D</a>
+        </div>
       </div>
-    </section>
-    <!-- Outras seções como modelos, novidades, reviews, etc. -->
-  </main>
+    </div>
+  </section>
 
-  <script src="js/main.js"></script>
+  <section id="visualizador" class="viewer-section">
+    <h2 class="section-title">Visualizador 3D Interativo</h2>
+    <div class="viewer-container">
+      <div id="viewer3D"></div>
+      <div class="viewer-controls">
+        <button class="control-btn" id="rotateBtn"><i class="fas fa-sync-alt"></i> Rotacionar</button>
+        <button class="control-btn" id="zoomInBtn"><i class="fas fa-search-plus"></i> Zoom In</button>
+        <button class="control-btn" id="zoomOutBtn"><i class="fas fa-search-minus"></i> Zoom Out</button>
+        <button class="control-btn" id="changeColorBtn"><i class="fas fa-palette"></i> Mudar Cor</button>
+      </div>
+      <div class="car-selector">
+        <div class="car-option active" data-model="sport">
+          <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Esportivo">
+        </div>
+        <div class="car-option" data-model="suv">
+          <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="SUV">
+        </div>
+        <div class="car-option" data-model="sedan">
+          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Sedan">
+        </div>
+        <div class="car-option" data-model="luxury">
+          <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Luxo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="destaques" class="features">
+    <h2 class="section-title" style="color: var(--secondary);">Nossos Destaques</h2>
+    <div class="features-container">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-tachometer-alt"></i>
+        </div>
+        <h3>Alta Performance</h3>
+        <p>Motores turbo com tecnologia de ponta que oferecem potência e eficiência sem precedentes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Segurança Avançada</h3>
+        <p>Sistemas de segurança de última geração com assistência ao motorista e proteção integral.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h3>Tecnologia Inteligente</h3>
+        <p>Conectividade completa com sistemas de infoentretenimento e assistentes virtuais integrados.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="modelos" class="models">
+    <h2 class="section-title">Modelos em Destaque</h2>
+    <div class="models-container">
+      <div class="models-grid">
+        <div class="model-card">
+          <div class="model-img">
+            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="GT-R Elite">
+          </div>
+          <div class="model-info">
+            <h3 class="model-title">GT-R Elite</h3>
+            <p class="model-price">R$ 420.000</p>
+            <div class="model-specs">
+              <div class="spec">
+                <div class="spec-value">600HP</div>
+                <div class="spec-label">Potência</div>
+              </div>
+              <div class="spec">
+                <div class="spec-value">3.2s</div>
+                <div class="spec-label">0-100km/h</div>
+              </div>
+              <div class="spec">
+                <div class="spec-value">320km/h</div>
+                <div class="spec-label">Vel. Máx</div>
+              </div>
+            </div>
+            <button class="model-btn">Detalhes</button>
+          </div>
+        </div>
+        <div class="model-card">
+          <div class="model-img">
+            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Venture X">
+          </div>
+          <div class="model-info">
+            <h3 class="model-title">Venture X</h3>
+            <p class="model-price">R$ 350.000</p>
+            <div class="model-specs">
+              <div class="spec">
+                <div class="spec-value">450HP</div>
+                <div class="spec-label">Potência</div>
+              </div>
+              <div class="spec">
+                <div class="spec-value">4.8s</div>
+                <div class="spec-label">0-100km/h</div>
+              </div>
+              <div class="spec">
+                <div class="spec-value">250km/h</div>
+                <div class="spec-label">Vel. Máx</div>
+              </div>
+            </div>
+            <button class="model-btn">Detalhes</button>
+          </div>
+        </div>
+        <div class="model-card">
+          <div class="model-img">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luxury S">
+          </div>
+          <div class="model-info">
+            <h3 class="model-title">Luxury S</h3>
+            <p class="model-price">R$ 680.000</p>
+            <div class="model-specs">
+              <div class="spec">
+                <div class="spec-value">520HP</div>
+                <div class="spec-label">Potência</div>
+              </div>
+              <div class="spec">
+                <div class="spec-value">4.5s</div>
+                <div class="spec-label">0-100km/h</div>
+              </div>
+              <div class="spec">
+                <div class="spec-value">280km/h</div>
+                <div class="spec-label">Vel. Máx</div>
+              </div>
+            </div>
+            <button class="model-btn">Detalhes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>AutoElite</h3>
+        <p>A mais avançada experiência em automóveis premium, combinando desempenho, tecnologia e luxo.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Links Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Início</a></li>
+          <li><a href="#modelos"><i class="fas fa-chevron-right"></i> Modelos</a></li>
+          <li><a href="#visualizador"><i class="fas fa-chevron-right"></i> Visualizador 3D</a></li>
+          <li><a href="#destaques"><i class="fas fa-chevron-right"></i> Destaques</a></li>
+          <li><a href="#contato"><i class="fas fa-chevron-right"></i> Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo</p>
+        <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+        <p><i class="fas fa-envelope"></i> contato@autoelite.com.br</p>
+        <p><i class="fas fa-clock"></i> Seg-Sex: 9:00 - 18:00</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2023 AutoElite. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
